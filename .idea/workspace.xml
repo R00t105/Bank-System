@@ -5,7 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f56135cc-339a-4fb3-a59c-51f3523f0e0a" name="Changes" comment="Bank System Using Java &amp; Spring Boot">
+      <change afterPath="$PROJECT_DIR$/.idea/jpa.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transaction-Service/src/main/java/bank/transactionservice/Constants/TransactionStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transaction-Service/src/main/java/bank/transactionservice/Constants/TransactionType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transaction-Service/src/main/java/bank/transactionservice/Controller/TransactionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transaction-Service/src/main/java/bank/transactionservice/DTOs/TransactionRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transaction-Service/src/main/java/bank/transactionservice/Entity/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transaction-Service/src/main/java/bank/transactionservice/Exception/BaseException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transaction-Service/src/main/java/bank/transactionservice/Exception/ErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transaction-Service/src/main/java/bank/transactionservice/Exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transaction-Service/src/main/java/bank/transactionservice/Exception/TransactionNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transaction-Service/src/main/java/bank/transactionservice/Mapper/TransactionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transaction-Service/src/main/java/bank/transactionservice/Repository/TransactionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transaction-Service/src/main/java/bank/transactionservice/Service/TransactionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Account-Service/src/main/java/bank/AccountServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Account-Service/src/main/java/bank/AccountServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Account-Service/src/main/java/bank/Controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Account-Service/src/main/java/bank/Controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Account-Service/src/main/java/bank/OutServices/CustomerOpenFeign.java" beforeDir="false" afterPath="$PROJECT_DIR$/Account-Service/src/main/java/bank/OutServices/CustomerOpenFeign.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Account-Service/src/main/java/bank/Service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Account-Service/src/main/java/bank/Service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-Gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Api-Gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer-Service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Customer-Service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer-Service/src/main/java/bank/customerservice/Dto/UpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Customer-Service/src/main/java/bank/customerservice/Dto/UpdateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer-Service/src/main/java/bank/customerservice/Service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Customer-Service/src/main/java/bank/customerservice/Service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eureka-Server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka-Server/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,15 +40,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Enum" />
         <option value="Record" />
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -33,7 +61,9 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="39IUJ3ZsUysXnWuyIsOFnUkgUkx" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -47,11 +77,13 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.AccountServiceApplication.executor": "Run",
     "Spring Boot.ApiGatwayApplication.executor": "Run",
     "Spring Boot.CustomerServiceApplication.executor": "Run",
     "Spring Boot.EurekaServerApplication.executor": "Run",
-    "git-widget-placeholder": "master",
+    "Spring Boot.TransactionServiceApplication.executor": "Run",
+    "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "24",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/Projects/Spring Boot/BankSystem",
@@ -60,8 +92,11 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "settings.sync",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -82,7 +117,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiGatwayApplication">
+  <component name="RunManager" selected="Spring Boot.TransactionServiceApplication">
     <configuration name="AccountServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Account-Service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="bank.AccountServiceApplication" />
@@ -111,11 +146,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TransactionServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Transaction-Service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="bank.transactionservice.TransactionServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Spring Boot.TransactionServiceApplication" />
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Spring Boot.CustomerServiceApplication" />
       <item itemvalue="Spring Boot.AccountServiceApplication" />
       <item itemvalue="Spring Boot.ApiGatwayApplication" />
-      <item itemvalue="Spring Boot.CustomerServiceApplication" />
-      <item itemvalue="Spring Boot.EurekaServerApplication" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -141,7 +184,13 @@
       <workItem from="1770726957854" duration="8365000" />
       <workItem from="1770796903683" duration="5960000" />
       <workItem from="1770807655856" duration="8000" />
-      <workItem from="1770809070655" duration="784000" />
+      <workItem from="1770809070655" duration="880000" />
+      <workItem from="1770838231238" duration="734000" />
+      <workItem from="1770900479530" duration="2562000" />
+      <workItem from="1770903072524" duration="2691000" />
+      <workItem from="1770905910064" duration="182000" />
+      <workItem from="1770906132084" duration="14000" />
+      <workItem from="1770927708056" duration="6916000" />
     </task>
     <task id="LOCAL-00001" summary="Bank System Using Java &amp; Spring Boot">
       <option name="closed" value="true" />
@@ -203,19 +252,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Customer-Service/src/main/java/bank/customerservice/Service/CustomerService.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Customer-Service/src/main/java/bank/customerservice/Mapper/CustomerMapper.java</url>
           <line>12</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Customer-Service/src/main/java/bank/customerservice/Service/CustomerService.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Account-Service/src/main/java/bank/Controller/AccountController.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="8" />
+          <line>65</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Account-Service/src/main/java/bank/Exception/GlobalExceptionHandler.java</url>

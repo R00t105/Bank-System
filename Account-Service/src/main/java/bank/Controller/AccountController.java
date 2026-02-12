@@ -26,12 +26,14 @@ public class AccountController {
 
     private final AccountService accountService;
 
+
     @Operation(summary = "Get all accounts", description = "Returns a list of all bank accounts")
     @ApiResponse(responseCode = "200", description = "Successfully retrieved accounts list")
     @GetMapping
     public ResponseEntity<List<AccountResponse>> getAllAccounts() {
         return ResponseEntity.ok(accountService.getAllAccounts());
     }
+
 
     @Operation(summary = "Get account by ID", description = "Returns a single account by its ID")
     @ApiResponses({
@@ -44,6 +46,7 @@ public class AccountController {
         return ResponseEntity.ok(accountService.getAccountById(id));
     }
 
+
     @Operation(summary = "Get account by account number", description = "Returns a single account by its account number")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Account found"),
@@ -55,6 +58,7 @@ public class AccountController {
         return ResponseEntity.ok(accountService.getAccountByNumber(accountNumber));
     }
 
+
     @Operation(summary = "Get accounts by customer ID", description = "Returns all accounts belonging to a specific customer")
     @ApiResponse(responseCode = "200", description = "Successfully retrieved accounts")
     @GetMapping("/customer/{customerId}")
@@ -62,6 +66,7 @@ public class AccountController {
             @Parameter(description = "Customer ID") @PathVariable Long customerId) {
         return ResponseEntity.ok(accountService.getAccountsByCustomerId(customerId));
     }
+
 
     @Operation(summary = "Create a new account", description = "Creates a new bank account for a customer")
     @ApiResponses({
@@ -75,6 +80,7 @@ public class AccountController {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(accountService.createAccount(request));
     }
+
 
     @Operation(summary = "Update account", description = "Updates account details (currency, status, etc.)")
     @ApiResponses({
@@ -90,6 +96,7 @@ public class AccountController {
                 .body(accountService.updateAccount(id, request));
     }
 
+
     @Operation(summary = "Delete an account", description = "Deletes an account (only if status is CLOSED and balance is zero)")
     @ApiResponses({
             @ApiResponse(responseCode = "204", description = "Account deleted successfully"),
@@ -102,6 +109,7 @@ public class AccountController {
         accountService.deleteAccount(id);
         return ResponseEntity.noContent().build();
     }
+
 
     @Operation(summary = "Deposit money", description = "Deposits money into an account")
     @ApiResponses({
@@ -117,6 +125,7 @@ public class AccountController {
                 .body(accountService.deposit(id, request));
     }
 
+
     @Operation(summary = "Withdraw money", description = "Withdraws money from an account")
     @ApiResponses({
             @ApiResponse(responseCode = "202", description = "Withdrawal successful"),
@@ -130,6 +139,7 @@ public class AccountController {
         return ResponseEntity.status(HttpStatus.ACCEPTED)
                 .body(accountService.withdraw(id, request));
     }
+
 
     @Operation(summary = "Close account", description = "Closes an account (only if balance is zero)")
     @ApiResponses({

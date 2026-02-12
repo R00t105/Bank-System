@@ -11,9 +11,7 @@ import bank.customerservice.Repository.CustomerRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -41,8 +39,7 @@ public class CustomerService {
         Customer customer = new Customer();
         customer = customerMapper.toCustomer(customerRequest);
         Customer savedCustomer = customerRepository.save(customer);
-        CustomerAddedResponse customerAddedResponse = customerMapper.toCustomerAddedResponse(savedCustomer);
-        return customerAddedResponse;
+        return customerMapper.toCustomerAddedResponse(savedCustomer);
     }
 
     @Transactional

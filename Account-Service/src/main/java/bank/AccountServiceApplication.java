@@ -5,14 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
-/**
- * Account Service Application Entry Point
- * 
- * Best Practices Applied:
- * 1. @EnableJpaAuditing - Enables automatic population of @CreatedDate
- * and @LastModifiedDate
- * 2. Separate package structure for better organization
- */
 @SpringBootApplication
 @EnableJpaAuditing
 @EnableFeignClients

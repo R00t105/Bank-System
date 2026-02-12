@@ -11,4 +11,7 @@ public interface CustomerOpenFeign {
     @GetMapping("/customers/exists/{customerId}")
     public Boolean existsCustomerById(@PathVariable("customerId") Long customerId);
 
+    @GetMapping("/customers/{customerId}")
+    public CustomerDto getCustomerById(@PathVariable("customerId") Long customerId);
+
 }

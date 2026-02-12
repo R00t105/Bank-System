@@ -29,9 +29,7 @@ public class AccountService {
     private final AccountMapper accountMapper;
     private final CustomerOpenFeign customerOpenFeign;
 
-    /**
-     * Get all accounts
-     */
+
     public List<AccountResponse> getAllAccounts() {
         return accountRepository.findAll()
                 .stream()
@@ -39,27 +37,21 @@ public class AccountService {
                 .toList();
     }
 
-    /**
-     * Get account by ID
-     */
+
     public AccountResponse getAccountById(Long id) {
         Account account = accountRepository.findById(id)
                 .orElseThrow(() -> new AccountNotFoundException(id));
         return accountMapper.toAccountResponse(account);
     }
 
-    /**
-     * Get account by account number
-     */
+
     public AccountResponse getAccountByNumber(String accountNumber) {
         Account account = accountRepository.findByAccountNumber(accountNumber)
                 .orElseThrow(() -> new AccountNotFoundException(accountNumber));
         return accountMapper.toAccountResponse(account);
     }
 
-    /**
-     * Get all accounts for a customer
-     */
+
     public List<AccountResponse> getAccountsByCustomerId(Long customerId) {
         return accountRepository.findByCustomerId(customerId)
                 .stream()
@@ -67,9 +59,7 @@ public class AccountService {
                 .toList();
     }
 
-    /**
-     * Create a new account
-     */
+
     @Transactional
     public AccountResponse createAccount(CreateAccountRequest request) {
 
@@ -88,9 +78,7 @@ public class AccountService {
         return accountMapper.toAccountResponse(savedAccount);
     }
 
-    /**
-     * Update account details
-     */
+
     @Transactional
     public AccountResponse updateAccount(Long id, UpdateAccountRequest request) {
         Account account = accountRepository.findById(id)
@@ -100,10 +88,7 @@ public class AccountService {
         return accountMapper.toAccountResponse(updatedAccount);
     }
 
-    /**
-     * Delete an account
-     * Only accounts with zero balance and CLOSED status can be deleted
-     */
+
     @Transactional
     public void deleteAccount(Long id) {
         Account account = accountRepository.findById(id)
@@ -125,9 +110,7 @@ public class AccountService {
         accountRepository.delete(account);
     }
 
-    /**
-     * Deposit money into an account
-     */
+
     @Transactional
     public AccountResponse deposit(Long id, TransactionRequest request) {
         Account account = accountRepository.findById(id)
@@ -150,9 +133,7 @@ public class AccountService {
         return accountMapper.toAccountResponse(account);
     }
 
-    /**
-     * Withdraw money from an account
-     */
+
     @Transactional
     public AccountResponse withdraw(Long id, TransactionRequest request) {
         Account account = accountRepository.findById(id)
@@ -179,16 +160,12 @@ public class AccountService {
         return accountMapper.toAccountResponse(account);
     }
 
-    /**
-     * Close an account
-     * Only accounts with zero balance can be closed
-     */
+
     @Transactional
     public AccountResponse closeAccount(Long id) {
         Account account = accountRepository.findById(id)
                 .orElseThrow(() -> new AccountNotFoundException(id));
 
-        // Check if account has zero balance
         if (account.getBalance().compareTo(BigDecimal.ZERO) != 0) {
             throw new IllegalStateException("Cannot close account with non-zero balance. Please withdraw all funds first.");
         }
