@@ -6,7 +6,6 @@ import bank.transactionservice.Exception.TransactionNotFoundException;
 import bank.transactionservice.Service.TransactionService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,19 +34,19 @@ public class TransactionController {
     }
 
 
-    @Operation(summary = "Save Transaction", description = "Save Transaction to DB")
-    @PostMapping
-    public ResponseEntity<?> saveTransaction(@RequestBody @Valid TransactionRequest transactionRequest) {
-        transactionService.saveTransaction(transactionRequest);
-        return ResponseEntity.ok("Transaction saved successfully");
-    }
-
-
     @Operation(summary = "Get Transaction by ID", description = "Get Transaction by ID from DB")
     @GetMapping("/{id}")
     public ResponseEntity<Transaction> getTransactionById(@PathVariable Long id) throws TransactionNotFoundException {
         return ResponseEntity.ok(transactionService.getTransactionById(id));
     }
+
+
+    @Operation(summary = "Save Transaction", description = "Save Transaction by Account Service")
+    @PostMapping("/save")
+    public ResponseEntity<Transaction> saveTransaction(@RequestBody TransactionRequest transaction) {
+        return ResponseEntity.ok(transactionService.saveTransaction(transaction));
+    }
+
 
 
 }

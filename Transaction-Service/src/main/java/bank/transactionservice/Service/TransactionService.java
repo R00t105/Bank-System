@@ -5,7 +5,6 @@ import bank.transactionservice.Entity.Transaction;
 import bank.transactionservice.Exception.TransactionNotFoundException;
 import bank.transactionservice.Mapper.TransactionMapper;
 import bank.transactionservice.Repository.TransactionRepository;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,11 +18,6 @@ public class TransactionService {
     private final TransactionMapper transactionMapper;
 
 
-    @Transactional
-    public void saveTransaction(TransactionRequest transactionRequest) {
-        transactionRepository.save(transactionMapper.toEntity(transactionRequest));
-    }
-
 
     public List<Transaction> getAllTransactions() {
         return transactionRepository.findAll();
@@ -34,4 +28,8 @@ public class TransactionService {
         return transactionRepository.findById(id).orElseThrow(() -> new TransactionNotFoundException(id));
     }
 
+
+    public Transaction saveTransaction(TransactionRequest transactionRequest) {
+        return transactionRepository.save(transactionMapper.toEntity(transactionRequest));
+    }
 }

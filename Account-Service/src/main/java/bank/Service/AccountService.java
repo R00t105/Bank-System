@@ -3,7 +3,6 @@ package bank.Service;
 import bank.Constants.AccountStatus;
 import bank.Dto.AccountResponse;
 import bank.Dto.CreateAccountRequest;
-import bank.Dto.CustomerDto;
 import bank.Dto.TransactionRequest;
 import bank.Dto.UpdateAccountRequest;
 import bank.Entity.Account;
@@ -13,6 +12,7 @@ import bank.Exception.InsufficientBalanceException;
 import bank.Exception.InvalidAccountStatusException;
 import bank.Mapper.AccountMapper;
 import bank.OutServices.CustomerOpenFeign;
+import bank.OutServices.TransactionOpenFeign;
 import bank.Repository.AccountRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -28,6 +28,7 @@ public class AccountService {
     private final AccountRepository accountRepository;
     private final AccountMapper accountMapper;
     private final CustomerOpenFeign customerOpenFeign;
+    private final TransactionOpenFeign transactionOpenFeign;
 
 
     public List<AccountResponse> getAllAccounts() {
@@ -130,6 +131,8 @@ public class AccountService {
             account.setStatus(AccountStatus.ACTIVE);
         }
 
+        transactionOpenFeign.saveTransaction(request);
+
         return accountMapper.toAccountResponse(account);
     }
 
@@ -156,6 +159,7 @@ public class AccountService {
         }
 
         account.setBalance(account.getBalance().subtract(request.getAmount()));
+        transactionOpenFeign.saveTransaction(request);
 
         return accountMapper.toAccountResponse(account);
     }

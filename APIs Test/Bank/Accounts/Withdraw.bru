@@ -1,0 +1,25 @@
+meta {
+  name: Withdraw
+  type: http
+  seq: 7
+}
+
+post {
+  url: http://localhost:8080/accounts/1/deposit
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "transactionType":"WITHDRAW",
+    "amount": 300,
+    "fromAccountId": 1,
+    "toAccountId": 1
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

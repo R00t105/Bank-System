@@ -36,9 +36,6 @@ public class Transaction {
     @Column(nullable = false, precision = 19, scale = 4)
     private BigDecimal amount;
 
-    @Enumerated(EnumType.STRING)
-    private TransactionStatus status = TransactionStatus.NOT_ACTIVE;
-
     private Long fromAccountId;
     private Long toAccountId;
 
